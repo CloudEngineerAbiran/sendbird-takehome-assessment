@@ -68,3 +68,33 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+#################################################################################
+
+# Sendbird Take-Home Assignment — Assessment 2
+
+## 👤 Candidate: Avi (Abiran Chatterjee) 
+## 📅 Submitted: [24/05/2024]
+
+---
+
+## ✅ What This App Does
+
+This React application demonstrates the following requirements from **Assessment 2**:
+
+- Creates **2 group channels** using the Sendbird JavaScript SDK
+- Sets the `customType` of each channel to the user's first name (`Avi`)
+- If `customType` is present, the UI displays channels as:  
+  `Channel Name (Avi)`
+- Sends a `"Assessment2"` message into each channel
+- Filters & deduplicates output to match **exactly the required result**
+
+---
+
+## 🔧 Setup Instructions
+
+### 1. Clone the repo / unzip the project  
+```bash
+cd sendbird-assessment-app
+npm install
+
