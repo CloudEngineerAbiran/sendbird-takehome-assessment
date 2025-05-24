@@ -78,6 +78,126 @@ This repository contains all work completed for the Sendbird Take-Home Assignmen
 
 ---
 
+## 🌟 Bonus Section
+
+### 1. Why do channels not display unless a message is sent?
+
+Sendbird does not show empty channels by default unless you explicitly include them. By default, the SDK filters out channels without activity to optimize UI and performance.
+
+### 2. How can we list channels even without messages?
+
+We can include empty channels in the list by setting:
+
+
+const listQuery = sb.groupChannel.createMyGroupChannelListQuery();
+listQuery.includeEmpty = true;
+
+
+### 3. Why be careful with push notifications in conversation view?
+
+Triggering push/browser notifications while a user is already viewing a conversation can be annoying and redundant. It may result in:
+
+* Duplicate alerts
+* Unnecessary distractions
+* Privacy issues
+* Poor user experience
+
+It’s better to suppress notifications when the user is in the relevant conversation.
+
+### 4. Use of Platform API via cURL
+
+#### i. Create a new user `u4`
+
+**Command:**
+
+
+curl -X POST \
+  https://api-2C276FF1-DB28-4344-A670-2A68E89C42F2.sendbird.com/v3/users \
+  -H "Content-Type: application/json" \
+  -H "Api-Token: 4e784a20d600a45c26213c31ee01b0e5a0028d9f" \
+  -d '{
+        "user_id": "u4",
+        "nickname": "u4",
+        "profile_url": ""
+      }'
+
+
+**Response:**
+
+```
+{
+  "user_id": "u4",
+  "nickname": "u4",
+  "profile_url": "",
+  ...
+  "is_active": true,
+  "is_created": true
+}
+```
+
+#### ii. Create group channel with users `u1` and `u4`, customType = "b4"
+
+**Command:**
+
+```
+curl -X POST \
+  https://api-2C276FF1-DB28-4344-A670-2A68E89C42F2.sendbird.com/v3/group_channels \
+  -H "Content-Type: application/json" \
+  -H "Api-Token: 4e784a20d600a45c26213c31ee01b0e5a0028d9f" \
+  -d '{
+        "user_ids": ["u1", "u4"],
+        "name": "bonus-channel-u1-u4",
+        "is_distinct": false,
+        "custom_type": "b4"
+      }'
+
+
+**Response:**
+
+```
+{
+  "channel_url": "sendbird_group_channel_541306613_261a0c698f9f48da065b74fbfb9b628e8b4f76a6",
+  "name": "bonus-channel-u1-u4",
+  "custom_type": "b4",
+  "member_count": 2,
+  ...
+}
+```
+
+#### iii. Send message "Bonus4" to the channel
+
+**Command:**
+
+curl -X POST \
+  https://api-2C276FF1-DB28-4344-A670-2A68E89C42F2.sendbird.com/v3/group_channels/sendbird_group_channel_541306613_261a0c698f9f48da065b74fbfb9b628e8b4f76a6/messages \
+  -H "Content-Type: application/json" \
+  -H "Api-Token: 4e784a20d600a45c26213c31ee01b0e5a0028d9f" \
+  -d '{
+        "message_type": "MESG",
+        "user_id": "u1",
+        "message": "Bonus4"
+      }'
+
+
+**Response:**
+
+```
+{
+  "message_id": 5829301720,
+  "message": "Bonus4",
+  "user": { "user_id": "u1" },
+  "channel_url": "sendbird_group_channel_541306613_261a0c698f9f48da065b74fbfb9b628e8b4f76a6"
+}
+```
+
+### Bonus Screenshots:
+
+* `bonus4-create-user-u4.png`
+* `bonus4-create-channel-u1-u4.png`
+* `bonus4-send-msg-bonus4.png`
+
+---
+
 ## 📁 Folder Structure
 
 ```
@@ -91,6 +211,9 @@ sendbird-assessment-app/
 │   ├── assessment2-screenshot.png
 │   ├── assessment3-screenshot.png
 │   ├── assessment4-screenshot.png
+│   ├── bonus4-create-user-u4.png
+│   ├── bonus4-create-channel-u1-u4.png
+│   ├── bonus4-send-msg-bonus4.png
 ├── *.js / *.mjs platform API scripts
 ├── README.md
 ```
