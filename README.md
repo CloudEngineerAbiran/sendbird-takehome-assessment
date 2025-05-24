@@ -1,100 +1,117 @@
-# Getting Started with Create React App
+# Sendbird Take-Home Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 👤 Candidate: Abiran
 
-## Available Scripts
+## 📅 Submitted: May 2025
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-#################################################################################
-
-# Sendbird Take-Home Assignment — Assessment 2
-
-## 👤 Candidate: Avi (Abiran Chatterjee) 
-## 📅 Submitted: [24/05/2024]
+This repository contains all work completed for the Sendbird Take-Home Assignment using the JavaScript SDK and React. The assessment consists of 4 parts.
 
 ---
 
-## ✅ What This App Does
+## ✅ Assessment 1: User Creation & Messaging via Platform API
 
-This React application demonstrates the following requirements from **Assessment 2**:
+### Tasks Completed:
 
-- Creates **2 group channels** using the Sendbird JavaScript SDK
-- Sets the `customType` of each channel to the user's first name (`Avi`)
-- If `customType` is present, the UI displays channels as:  
-  `Channel Name (Avi)`
-- Sends a `"Assessment2"` message into each channel
-- Filters & deduplicates output to match **exactly the required result**
+* Created three users: `u1`, `u2`, and `u3` using Platform API.
+* Created two group channels:
+
+  * `channel-u1-u2` (between u1 and u2)
+  * `channel-u2-u3` (between u2 and u3)
+* Sent message "Assessment1" through each channel.
+
+### Scripts Used:
+
+* `create-u2.js`, `create-u3.js`, `create-or-update-u2.js`
+* `create-channel-1.js`, `create-channel-2.js`
+* `send-msg-channel-1.js`, `send-msg-channel-2.js`
+
+### Screenshot Evidence:
+
+* `assessment1-user-u1.png`
+* `assessment1-user-u2.png`
+* `assessment1-user-u3.png`
 
 ---
 
-## 🔧 Setup Instructions
+## ✅ Assessment 2: Custom Type Channels & Message Sending
 
-### 1. Clone the repo / unzip the project  
-```bash
-cd sendbird-assessment-app
-npm install
+### Tasks Completed:
+
+* Used React app to create two new group channels with `customType = Avi`
+* Channels:
+
+  * `Channel 1 (Avi)` with user `u2`
+  * `Channel 2 (Avi)` with user `u3`
+* Sent message "Assessment2" in each channel
+* Displayed format in UI: `Channel Name (Avi)`
+
+### Screenshot:
+
+* `assessment2-screenshot.png`
+
+---
+
+## ✅ Assessment 3: Filter Channels by customType
+
+### Tasks Completed:
+
+* Modified `App.js` to filter and display only group channels that have `customType` defined
+* Used `customTypeStartsWithFilter` to restrict display
+
+### Screenshot:
+
+* `assessment3-screenshot.png`
+
+---
+
+## ✅ Assessment 4: Browser Notification on New Message
+
+### Tasks Completed:
+
+* Implemented `GroupChannelHandler` to listen for new messages
+* Used Web Notification API to show popup while on channel list
+* Sent trigger message from `u2` to test it
+
+### Screenshot:
+
+* `assessment4-screenshot.png`
+
+---
+
+## 📁 Folder Structure
+
+```
+sendbird-assessment-app/
+├── public/
+├── src/
+├── screenshots/
+│   ├── assessment1-user-u1.png
+│   ├── assessment1-user-u2.png
+│   ├── assessment1-user-u3.png
+│   ├── assessment2-screenshot.png
+│   ├── assessment3-screenshot.png
+│   ├── assessment4-screenshot.png
+├── *.js / *.mjs platform API scripts
+├── README.md
+```
+
+---
+
+## 🛠 Tech Stack
+
+* React
+* Sendbird JavaScript Chat SDK v4
+* Node.js for scripting Platform API
+
+---
+
+## 🔗 Submission Link
+
+* GitHub: [https://github.com/CloudEngineerAbiran/sendbird-takehome-assessment](https://github.com/CloudEngineerAbiran/sendbird-takehome-assessment)
+
+All assessments verified with screenshots and working code.
+
+---
+
+✅ End of Submission
 
