@@ -235,6 +235,23 @@ sendbird-assessment-app/
 
 All assessments verified with screenshots and working code.
 
+📦 Final ZIP Submission
+The complete project—including source code, scripts, and screenshots for Assessments 1 to 4 and Bonus Questions—is available as a ZIP archive.
+
+✅ Contents Included:
+React app (sendbird-assessment-app/)
+
+All scripts (.js, .mjs) used for Sendbird API tasks
+
+Screenshot evidence for each assessment
+
+Bonus API test scripts and summary scripts
+
+🔐 Note: The ZIP is too large to upload directly to GitHub (665MB), so it's hosted externally on Google Drive.
+
+📥 Download Link:
+👉 Click here to download the final submission (665MB) via Google Drive: https://drive.google.com/file/d/1xRPoo3Kxhhn7whGA7W9MP7jUevlUWSSB/view?usp=sharing
+
 ---
 
 ✅ End of Submission
