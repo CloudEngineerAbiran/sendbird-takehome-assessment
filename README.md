@@ -20,10 +20,11 @@ This repository contains all work completed for the Sendbird Take-Home Assignmen
 * Sent message "Assessment1" through each channel.
 
 ### Scripts Used:
+- `create-u2.js`, `create-u3.js`, `create-or-update-u2.js`
+- `create-channel-1.js`, `create-channel-2.js`
+- `send-msg-channel-1.js`, `send-msg-channel-2.js`
+- `assignment1-users-channels-summary.js` → Lists u1, u2, u3 and the specific channels/messages for validation.
 
-* `create-u2.js`, `create-u3.js`, `create-or-update-u2.js`
-* `create-channel-1.js`, `create-channel-2.js`
-* `send-msg-channel-1.js`, `send-msg-channel-2.js`
 
 ### Screenshot Evidence:
 
